@@ -36,7 +36,11 @@ DISPLAY_MAP = {
                     0x17: ' U',                         0x1A: ' P',
                     0x1c: ' L', 0x1D: ' J',
         0x21: 'c1', 0x22: 'c2', 0x23: 'c3', 0x24: 'c4', 0x25: 'c5',
-        0x26: 'c6', 0x27: 'c7', 0x28: 'c8',
+        0x26: 'c6', 0x27: 'c7', 0x28: 'c8',             
+        0x41: ' 1', 0x42: ' 2', 0x43: ' 3', 0x44: ' 4', 0x45: ' 5',
+        0x46: ' 6', 0x47: ' 7', 0x48: ' 8', 0x49: ' 9', 0x4A: '10',
+        0x4B: '11', 0x4C: '12', 0x4D: '13', 0x4E: '14', 0x4F: '15',
+        0x50: '16',
         0x59: '  ',             0x5B: ' -',
         0x5E: '| ', 0x5F: ' |',
 }
@@ -306,8 +310,8 @@ class Jablotron6x(object):
 	  try:
             text = MODE_MAP[self.mode]
           except KeyError:
-            logging.error("MODE_MAP does not contain value for %02x" % self.mode)
-	    text = "Mode %02x" % self.mode
+            logging.error("MODE_MAP does not contain value for 0x%02x" % self.mode)
+	    text = "Mode 0x%02x" % self.mode
 
           try:
             self.on_mode_change(text)
@@ -336,8 +340,8 @@ class Jablotron6x(object):
 	  try:
 	    text = DISPLAY_MAP[self.display]
           except KeyError:
-            logging.error("DISPLAY_MAP does not contain value for %02x" % self.display)
-            text = "%02x" % self.display
+            logging.error("DISPLAY_MAP does not contain value for 0x%02x" % self.display)
+            text = "0x%02x" % self.display
 
           try:
             self.on_display_change(text)
