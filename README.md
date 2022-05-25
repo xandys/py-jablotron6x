@@ -15,3 +15,4 @@ python
 
 More details about the [ja-6x protocol](https://github.com/pezinek/py-jablotron6x/wiki/Protocol) is in the wiki.
 
+Note: the mqtt functionality from ja2mqtt.py has been moved to [pezinek/jablotron2mqtt](https://github.com/pezinek/jablotron2mqtt) so if you want to interface your jablotron6x alarm with e.g. Home Assistant, use that other repo. ja2mqtt.py from this repo will be dropped.
