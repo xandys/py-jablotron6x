@@ -160,7 +160,7 @@ class Jablotron6x(object):
         :return: self
         """
         for b in buf:
-            self._con.write(chr(b))
+            self._con.write(bytes([b]))
         self._con.flush()
         return self
 
